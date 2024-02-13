@@ -1,0 +1,11 @@
+pydot
+joblib
+numpy==1.19.5
+pandas
+scikit-learn==1.0.2
+sklearn-pandas
+tensorflow
+onnx
+onnxruntime
+tf2onnx
+git+https://github.com/onnx/tensorflow-onnx
