@@ -2,7 +2,7 @@
 
 Contributors
 ----------------------
-Thank you to all the contributors who contributed to this project: Revanth Atmakuri, Shadman Kaif, Theresa Xu.
+🎉🌟Thank you to all the contributors who contributed to this project: Revanth Atmakuri, Shadman Kaif, Theresa Xu.🎉🌟
 
 How-To
 ----------------------
