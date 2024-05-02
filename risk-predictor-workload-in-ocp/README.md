@@ -4,6 +4,24 @@ Contributors
 ----------------------
 🎉🌟Thank you to all the contributors who contributed to this project: Revanth Atmakuri, Shadman Kaif, Theresa Xu.🎉🌟
 
+Objective
+----------------------
+The objective of this project is to deploy the Risk Predictor Model in an OpenShift Container Platform environment, enabling integration and utilization of the model for risk prediction tasks.
+
+Scope
+----------------------
+This project will involve:
+
+1. Building the image of the Risk Predictor inferencing code using Podman.
+2. Pushing the built image into the OpenShift Internal Registry.
+3. Retrieving the image stored in the OpenShift Internal Registry.
+4. Deploying the model using Kubernetes Deployment on OpenShift.
+5. Configuring a service for the deployed model.
+6. Setting up an ingress for the model endpoint.
+7. Verifying the deployment's functionality and scalability.
+   
+This project will not cover the development or training of the Risk Predictor Model itself, focusing solely on its deployment within an OpenShift environment.
+
 How-To
 ----------------------
 ### Step 1: Build the image of Risk Predictor inferencing code using Podman
