@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: riskpredictor-endpoint
+spec:
+  replicas: 64
+  selector:
+    matchLabels:
+      app: riskpredictor-endpoint
+  template:
+    metadata:
+      labels:
+        app: riskpredictor-endpoint
+    spec:
+      containers:
+        - name: riskpredictor-endpoint
+          image: image-registry.openshift-image-registry.svc:5000/riskpredictor/risk-predictor@sha256:a8fc733ef6948834debaa612fac8ddec309e1ff817db629ddebecdc735a4288f
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 5000
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 5700Mi #5Gi
+            request:
+              cpu: 1000m
+              memory: 5700Mi #5Gi
+

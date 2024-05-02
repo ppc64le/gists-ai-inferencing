@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: riskpredictor-endpoint-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /predict_risk
+        pathType: Prefix
+        backend:
+          service:
+            name: riskpredictor-endpoint
+            port:
+              number: 5000
+      - path: /testing
+        pathType: Prefix
+        backend:
+          service:
+            name: riskpredictor-endpoint
+            port:
+              number: 5000
+
