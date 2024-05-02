@@ -1,5 +1,9 @@
 # Deploying the Risk Predictor Model in OpenShift Container Platform
 
+Contributors
+----------------------
+Thank you to all the contributors who contributed to this project: Revanth Atmakuri, Shadman Kaif, Theresa Xu.
+
 How-To
 ----------------------
 ### Step 1: Build the image of Risk Predictor inferencing code using Podman
