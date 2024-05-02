@@ -3,7 +3,7 @@
 How-To
 ----------------------
 ### Step 1: Build the image of Risk Predictor inferencing code using Podman
-* `risk-predictor-workload-in-ocp`
+* Clone this repository and enter this directory, `cd risk-predictor-workload-in-ocp`
 * `podman build -t risk-predictor .`
 * `podman images`
 * Verify you have an image called localhost/risk-predictor.
