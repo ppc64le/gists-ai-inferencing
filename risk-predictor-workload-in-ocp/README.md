@@ -121,7 +121,7 @@ spec:
 * Run the command `oc get svc`
 * An example output is: 
 ```
-#Eg: [root@bastion risk_predictor_workload]# oc get svc
+#Eg: [root@bastion risk-predictor-workload-in-ocp]# oc get svc
 #NAME                     TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 #riskpredictor-endpoint   NodePort   172.30.247.79   <none>        5000:32479/TCP   45h
 ```
@@ -136,10 +136,10 @@ From this, the port number would be the second port - 32479.
 ### Steps to Scale the pods or reallocate the resources
 In order to scale the pods, you can open the deployment file and change the values respective to your needs:
 ```
-[root@bastion risk_predictor_workload]# oc get deployment
+[root@bastion risk-predictor-workload-in-ocp]# oc get deployment
 NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
 riskpredictor-endpoint   64/64   64           64          46h
-[root@bastion risk_predictor_workload]# oc edit deployment riskpredictor-endpoint
+[root@bastion risk-predictor-workload-in-ocp]# oc edit deployment riskpredictor-endpoint
 ```
 Here is the yaml file that's opened which you can change to reflect your resource requirements:
 ```
