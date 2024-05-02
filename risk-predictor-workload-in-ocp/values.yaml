@@ -1,9 +1,0 @@
-replicaCount: 32
-# The below image will be used to create the pods
-image: image-registry.openshift-image-registry.svc:5000/riskpredictor/risk-predictor@sha256:a8fc733ef6948834debaa612fac8ddec309e1ff817db629ddebecdc735a4288f
-cpuLimit: 1000m # 1 CPU
-memoryLimit: 5700Mi # 5 GB
-cpuRequest: 1000m # 1 CPU
-memoryRequest: 5700Mi # 5 GB
-servicePort: 5000 # This port should be same port that's exposed in dockerfile
-
