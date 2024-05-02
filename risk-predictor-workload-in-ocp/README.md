@@ -32,7 +32,7 @@ How-To
 
 ### Step 2: Push the build image into the OpenShift Internal Registry
 * `podman login -u kubeadmin -p $(oc whoami -t) --tls-verify=false default-route-openshift-image-registry.apps.ai.toropsp.com`
-* *podman tag localhost/risk-predictor:latest default-route-openshift-image-registry.apps.ai.toropsp.com/riskpredictor/risk-predictor:latest`
+* `podman tag localhost/risk-predictor:latest default-route-openshift-image-registry.apps.ai.toropsp.com/riskpredictor/risk-predictor:latest`
 * Make sure you see a new image with this name when run `podman images`
 * `podman push default-route-openshift-image-registry.apps.ai.toropsp.com/riskpredictor/risk-predictor --tls-verify=false`
 
