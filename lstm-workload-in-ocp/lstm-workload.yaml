@@ -1,0 +1,23 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  creationTimestamp: "2024-04-26T19:54:58Z"
+  generation: 1
+  name: lstm-workload
+  namespace: lstmtesting
+  resourceVersion: "375280"
+  uid: ba18a3bb-037d-415a-8491-8a70889f1f3e
+spec:
+  insecure: true
+  lookupPolicy:
+    local: false
+status:
+  dockerImageRepository: image-registry.openshift-image-registry.svc:5000/lstmtesting/lstm-workload
+  publicDockerImageRepository: default-route-openshift-image-registry.apps.ai.toropsp.com/lstmtesting/lstm-workload
+  tags:
+  - items:
+    - created: "2024-04-26T19:54:58Z"
+      dockerImageReference: image-registry.openshift-image-registry.svc:5000/lstmtesting/lstm-workload@sha256:fe8b44105cd7c015fb329780f0f3692fb46ea02e566b239c8ebae66e434649a6
+      generation: 1
+      image: sha256:fe8b44105cd7c015fb329780f0f3692fb46ea02e566b239c8ebae66e434649a6
+    tag: latest

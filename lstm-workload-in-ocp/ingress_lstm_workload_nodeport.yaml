@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lstm-endpoint-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /predict
+        pathType: Prefix
+        backend:
+          service:
+            name: lstm-endpoint
+            port:
+              number: 5000
+      - path: /testing
+        pathType: Prefix
+        backend:
+          service:
+            name: lstm-endpoint
+            port:
+              number: 5000
+

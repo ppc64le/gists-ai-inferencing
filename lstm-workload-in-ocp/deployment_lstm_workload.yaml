@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lstm-endpoint
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lstm-endpoint
+  template:
+    metadata:
+      labels:
+        app: lstm-endpoint
+    spec:
+      containers:
+      - name: lstm-endpoint
+        #image: default-route-openshift-image-registry.apps.ai.toropsp.com/lstmtesting/lstm-workload:latest
+        image: image-registry.openshift-image-registry.svc:5000/lstmtesting/lstm-workload@sha256:fe8b44105cd7c015fb329780f0f3692fb46ea02e566b239c8ebae66e434649a6
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+        resources:
+        limits:
+          cpu: 100m
+          memory: 4Gi
+        request:
+          cpu: 100m
+          memory: 4Gi
+
