@@ -6,13 +6,21 @@ Contributors
 
 Objective
 ----------------------
-
+The objective of this project is to deploy the Fraud Detection LSTM model in an OpenShift Container Platform environment for efficient fraud detection.
 
 Scope
 ----------------------
-This project will involve:
+This project involves:
 
+1. Building the image of Fraud Detection LSTM inferencing code using Podman.
+2. Pushing the built image into the OpenShift Internal Registry.
+3. Retrieving the image stored in the OpenShift Internal Registry.
+4. Deploying the model using Kubernetes Deployment on OpenShift.
+5. Configuring a service for the deployed model.
+6. Setting up an ingress for the model endpoint.
+7. Verifying the deployment's functionality and scalability.
 
+This project will not cover the development or training of the Fraud Detection LSTM model itself, focusing solely on its deployment within an OpenShift environment.
 
 How-To
 ----------------------
