@@ -25,7 +25,8 @@ This project will not cover the development or training of the Risk Predictor Mo
 How-To
 ----------------------
 ### Step 1: Build the image of Risk Predictor inferencing code using Podman
-* Clone this repository and enter this directory, `cd risk-predictor-workload-in-ocp`
+* Clone this repository: `git clone https://github.com/ppc64le/gists-ai-inferencing.git`
+* Change your working directory to this directory, `cd risk-predictor-workload-in-ocp`
 * `podman build -t risk-predictor .`
 * `podman images`
 * Verify you have an image called localhost/risk-predictor.
