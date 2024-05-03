@@ -32,16 +32,22 @@ How-To
 * Verify you have an image called localhost/risk-predictor.
 
 ### Step 2: Push the build image into the OpenShift Internal Registry
-* `podman login -u kubeadmin -p $(oc whoami -t) --tls-verify=false default-route-openshift-image-registry.apps.ai.toropsp.com`
-* `podman tag localhost/risk-predictor:latest default-route-openshift-image-registry.apps.ai.toropsp.com/riskpredictor/risk-predictor:latest`
+* `podman login -u kubeadmin -p $(oc whoami -t) --tls-verify=false default-route-openshift-image-registry.apps.domain.com`
+* `podman tag localhost/risk-predictor:latest default-route-openshift-image-registry.apps.domain.com/riskpredictor/risk-predictor:latest`
 * Make sure you see a new image with this name when run `podman images`
-* `podman push default-route-openshift-image-registry.apps.ai.toropsp.com/riskpredictor/risk-predictor --tls-verify=false`
+* `podman push default-route-openshift-image-registry.apps.domain.com/riskpredictor/risk-predictor --tls-verify=false`
 
 ### Step 3: Get the image stored in the OpenShift Internal Registry
 * `oc get is`
 
 ### Step 4: Deployment 
 Make sure you note the full path to the image in step 3, and edit the value called “image” in the deployment file to reflect the image path from step 3.
+For this simple logistic regression model's pods, it requires less compute and memory relative to Deep Learning models and Large Language Models.
+This configuration will not work for every environment, however in our environment,
+our OCP Cluster has 2 worker nodes of 5 cores and 200 GB respectively. 
+Each pod uses 1 core running SMT8 and 5 GB memory.
+There are 64 total pods deployed on the 2 worker nodes
+each of the replicas takes 1 vCore and in total, we have 64 vCores, we have 2 worker nodes therefore it's 32 vCores per worker node and because it's smt8, we have 40 vCores available and thus and we are using 80% of the resources.
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -132,7 +138,7 @@ From this, the port number would be the second port - 32479.
 * `oc get pod | grep riskpredictor | wc -l`
 * Make sure the above output give the number reflecting the number of replicas by running:
   
-`curl -X POST -H "Content-Type: application/json" -d '{"example": [37899722504, 81533243, 2, 3, 246.643, 0.05, 15791552, 19366186, "Product #81533243", 10, "medium", 78.2992, 0.0, "10000-50000$", 2500]}' http://ai-w2.ai.toropsp.com:32479/predict_risk`
+`curl -X POST -H "Content-Type: application/json" -d '{"example": [37899722504, 81533243, 2, 3, 246.643, 0.05, 15791552, 19366186, "Product #81533243", 10, "medium", 78.2992, 0.0, "10000-50000$", 2500]}' http://ai-w2.domain.com:32479/predict_risk`
 
 ### Steps to Scale the pods or reallocate the resources
 In order to scale the pods, you can open the deployment file and change the values respective to your needs:
@@ -190,3 +196,6 @@ spec:
           limits:
             cpu: "1"
 ```
+### Testing with JMeter
+The Apache JMeter™ application is open source software, a 100% pure Java application designed to load test functional behavior and measure performance. It was originally designed for testing Web Applications but has since expanded to other test functions. You can download JMeter from https://jmeter.apache.org/download_jmeter.cgi. Ensure you have Java 8+ installed on your system.
+We have included a JMeter file in this repository: OCP-risk-predictor.jmx. Run JMeter on your system and change the inferencing endpoint to reflect your created endpoint.
