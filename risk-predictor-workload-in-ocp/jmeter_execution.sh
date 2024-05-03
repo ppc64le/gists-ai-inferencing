@@ -22,3 +22,9 @@ do
    echo "Starting NMON on $Worker"
    ssh -o 'StrictHostKeyChecking no' core@$Worker "nohup ./var/home/core/toolbox-psp/templates/nmon_power_rhel8_16m -ft -s $NMON_INTERVAL -c $NMON_SAMPLES -F test1.nmon /root/cpd48_jmeter/results/$TESTNAME/nmon < /dev/null > std.out 2> std.err &"
 done
+
+echo "-----------------------Starting Risk Predictor with $USERS user(s) and $LOOP loop count-----------------------"
+
+"/root/apache-jmeter-5.6.3/bin/jmeter.sh" -n -t /root/OCP-fraud-detection/OCP-fraud-detection-power.jmx -l /root/OCP-fraud-detection/results/$TESTNAME/report-setup.jtl -J"concurrent_users=$USERS" -e -o /root/OCP-fraud-detection/results/$TESTNAME/report-setup
+
+wait
