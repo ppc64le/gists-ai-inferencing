@@ -130,7 +130,7 @@ spec:
 ```
 #Eg: [root@bastion risk-predictor-workload-in-ocp]# oc get svc
 #NAME                     TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-#riskpredictor-endpoint   NodePort   172.30.247.79   <none>        5000:32479/TCP   45h
+#riskpredictor-endpoint   NodePort   YOUR:IP         <none>        5000:32479/TCP   45h
 ```
 From this, the port number would be the second port - 32479.
 
