@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: lstm-endpoint
 spec:
-  replicas: 1
+  replicas: 64
   selector:
     matchLabels:
       app: lstm-endpoint
@@ -20,10 +20,10 @@ spec:
         ports:
         - containerPort: 5000
         resources:
-        limits:
-          cpu: 100m
-          memory: 4Gi
-        request:
-          cpu: 100m
-          memory: 4Gi
+          limits:
+            cpu: 1000m
+            memory: 5Gi
+          request:
+            cpu: 1000m
+            memory: 5Gi
 
