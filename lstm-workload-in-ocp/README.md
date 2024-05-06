@@ -31,10 +31,10 @@ How-To
 * Verify you have an image called localhost/lstm-workload.
 
 ### Step 2: Push the build image into the OpenShift Internal Registry
-* `podman login -u kubeadmin -p $(oc whoami -t) --tls-verify=false default-route-openshift-image-registry.apps.ai.toropsp.com`
-* `podman tag localhost/lstm-workload:latest default-route-openshift-image-registry.apps.ai.toropsp.com/lstmtesting/lstm-workload:latest`
+* `podman login -u kubeadmin -p $(oc whoami -t) --tls-verify=false default-route-openshift-image-registry.apps.domain.com`
+* `podman tag localhost/lstm-workload:latest default-route-openshift-image-registry.apps.domain.com/lstmtesting/lstm-workload:latest`
 * Make sure you see a new image with this name when run `podman images`
-* `podman push default-route-openshift-image-registry.apps.ai.toropsp.com/lstmtesting/lstm-workload --tls-verify=false`
+* `podman push default-route-openshift-image-registry.apps.domain.com/lstmtesting/lstm-workload --tls-verify=false`
 
 ### Step 3: Get the image stored in the OpenShift Internal Registry
 * `oc get is`
@@ -123,7 +123,7 @@ spec:
 ```
 #Eg: [root@bastion lstm-workload-in-ocp]# oc get svc
 #NAME            TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
-#lstm-endpoint   NodePort   172.30.130.139   <none>        5000:30915/TCP   2d23h
+#lstm-endpoint   NodePort   YOUR IP          <none>        5000:30915/TCP   2d23h
 ```
 From this, the port number would be the second port - 30915.
 
