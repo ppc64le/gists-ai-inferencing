@@ -123,7 +123,7 @@ spec:
 ```
 #Eg: [root@bastion lstm-workload-in-ocp]# oc get svc
 #NAME            TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
-#lstm-endpoint   NodePort   YOUR IP          <none>        5000:30915/TCP   2d23h
+#lstm-endpoint   NodePort   YOUR:IP          <none>        5000:30915/TCP   2d23h
 ```
 From this, the port number would be the second port - 30915.
 
