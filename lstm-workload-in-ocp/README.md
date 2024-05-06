@@ -196,3 +196,6 @@ spec:
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
 ```
+### Testing with JMeter
+The Apache JMeter™ application is open source software, a 100% pure Java application designed to load test functional behavior and measure performance. It was originally designed for testing Web Applications but has since expanded to other test functions. You can download JMeter from https://jmeter.apache.org/download_jmeter.cgi. Ensure you have Java 8+ installed on your system.
+We have included a JMeter file in this repository: OCP-fraud-detection-power-final.jmx. Run JMeter on your system and change the inferencing endpoint to reflect your created endpoint.
