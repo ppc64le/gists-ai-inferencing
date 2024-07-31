@@ -6,7 +6,6 @@ Contributors
 
 Objective
 ----------------------
-The objective of this project is to deploy the Risk Predictor Model in an OpenShift Container Platform environment, enabling integration and utilization of the model for risk prediction tasks.
 
 Scope
 -----------------------
